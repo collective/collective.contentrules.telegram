@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.1 (unreleased)
-----------------
+1.0.1 (2024-03-21)
+------------------
 
 - set default value for token [Mikel Larreategi <mlarreategi@codesyntax.com>]
 
