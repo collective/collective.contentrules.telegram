@@ -10,12 +10,10 @@ from zope.interface import Interface
 from zope import schema
 
 class ITelegramBotConfigurationControlPanel(Interface):
-    myfield_name = schema.TextLine(
-        title=_(
-            "This is an example field for this control panel",
-        ),
+    token = schema.TextLine(
+        title=_("Telegram Bot Token"),
         description=_(
-            "",
+            "This the global Telegram Bot token than will be used if no other token is specified per-content-rule",
         ),
         default="",
         required=False,
@@ -32,7 +30,6 @@ class TelegramBotConfigurationControlPanel(RegistryEditForm):
 TelegramBotConfigurationControlPanelView = layout.wrap_form(
     TelegramBotConfigurationControlPanel, ControlPanelFormWrapper
 )
-
 
 
 @adapter(Interface, ICollectiveContentrulesTelegramLayer)

@@ -12,7 +12,7 @@ from zope.interface import implementer
 from zope.interface import Interface
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 import telegram
-
+from plone import api
 
 class ITelegramAction(Interface):
     """ Definition of the configuration of the action"""
@@ -83,8 +83,12 @@ class TelegramActionExecutor:
                 - It is a global setting
 
         """
+        if self.element.token:
+            return self.element.token
 
-        return self.element.token
+        return api.portal.get_registry_record(
+            "collective.contentrules.telegram.telegram_bot_configuration_control_panel.token"
+        )
 
     def __call__(self):
         """ execute the action """
@@ -94,7 +98,6 @@ class TelegramActionExecutor:
         bot = telegram.Bot(token=self._get_token())
         bot.send_message(recipient, message)
         return True
-
 
 
 class TelegramActionAddForm(ActionAddForm):
