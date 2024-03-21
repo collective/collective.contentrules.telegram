@@ -1,12 +1,13 @@
-<?xml version="1.0"?>
-<registry
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    i18n:domain="collective.contentrules.telegram">
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="collective.contentrules.telegram"
+>
 
-<!-- -*- extra stuff goes here -*- -->
+  <!-- -*- extra stuff goes here -*- -->
 
   <records interface="collective.contentrules.telegram.controlpanels.telegram_bot_configuration_control_panel.controlpanel.ITelegramBotConfigurationControlPanel"
-           prefix="collective.contentrules.telegram.telegram_bot_configuration_control_panel" />
+           prefix="collective.contentrules.telegram.telegram_bot_configuration_control_panel"
+  />
 
 
 </registry>

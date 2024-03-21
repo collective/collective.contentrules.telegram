@@ -41,5 +41,3 @@ COLLECTIVE_CONTENTRULES_TELEGRAM_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(COLLECTIVE_CONTENTRULES_TELEGRAM_FIXTURE,),
     name="CollectiveContentrulesTelegramLayer:FunctionalTesting",
 )
-
-

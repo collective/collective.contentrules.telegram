@@ -1,12 +1,15 @@
 from collective.contentrules.telegram import _
-from collective.contentrules.telegram.interfaces import ICollectiveContentrulesTelegramLayer
+from collective.contentrules.telegram.interfaces import (
+    ICollectiveContentrulesTelegramLayer,
+)
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
 from plone.restapi.controlpanels import RegistryConfigletPanel
 from plone.z3cform import layout
+from zope import schema
 from zope.component import adapter
 from zope.interface import Interface
-from zope import schema
+
 
 class ITelegramBotConfigurationControlPanel(Interface):
     token = schema.TextLine(
@@ -22,7 +25,9 @@ class ITelegramBotConfigurationControlPanel(Interface):
 
 class TelegramBotConfigurationControlPanel(RegistryEditForm):
     schema = ITelegramBotConfigurationControlPanel
-    schema_prefix = "collective.contentrules.telegram.telegram_bot_configuration_control_panel"
+    schema_prefix = (
+        "collective.contentrules.telegram.telegram_bot_configuration_control_panel"
+    )
     label = _("Telegram Bot Configuration Control Panel")
 
 
@@ -40,4 +45,6 @@ class TelegramBotConfigurationControlPanelConfigletPanel(RegistryConfigletPanel)
     configlet_category_id = "Products"
     title = _("Telegram Bot Configuration Control Panel")
     group = ""
-    schema_prefix = "collective.contentrules.telegram.telegram_bot_configuration_control_panel"
+    schema_prefix = (
+        "collective.contentrules.telegram.telegram_bot_configuration_control_panel"
+    )

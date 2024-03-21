@@ -1,64 +1,69 @@
 from collective.contentrules.telegram import _
 from OFS.SimpleItem import SimpleItem
+from plone import api
 from plone.app.contentrules.actions import ActionAddForm
 from plone.app.contentrules.actions import ActionEditForm
 from plone.app.contentrules.browser.formhelper import ContentRuleFormWrapper
-from plone.contentrules.rule.interfaces import IExecutable, IRuleElementData
+from plone.contentrules.rule.interfaces import IExecutable
+from plone.contentrules.rule.interfaces import IRuleElementData
 from plone.stringinterp.interfaces import IStringInterpolator
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import Interface
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
 import telegram
-from plone import api
+
 
 class ITelegramAction(Interface):
-    """ Definition of the configuration of the action"""
+    """Definition of the configuration of the action"""
+
     message = schema.Text(
         title=_(
-            'Message to be sent',
+            "Message to be sent",
         ),
         description=_(
-            '',
+            "",
         ),
-        default='',
+        default="",
         required=True,
         readonly=False,
     )
 
     recipient = schema.TextLine(
         title=_(
-            'Message recipient',
+            "Message recipient",
         ),
         description=_(
-            '',
+            "",
         ),
-        default='',
+        default="",
         required=True,
         readonly=False,
     )
 
     token = schema.TextLine(
         title=_(
-            'Telegram Bot Token',
+            "Telegram Bot Token",
         ),
         description=_(
-            'Enter the token provided by the Telegram bot you need to create before configuring this rule. You can ignore this setting if you are using the same site-wide Telegram bot, which need to be configured in the global control panel available in the site settings',
+            "Enter the token provided by the Telegram bot you need to create before configuring this rule. You can ignore this setting if you are using the same site-wide Telegram bot, which need to be configured in the global control panel available in the site settings",
         ),
-        default='',
+        default="",
         required=False,
         readonly=False,
     )
 
+
 @implementer(ITelegramAction, IRuleElementData)
 class TelegramAction(SimpleItem):
-    """ The implementation of the action"""
+    """The implementation of the action"""
 
-    message = ''
-    recipient = ''
+    message = ""
+    recipient = ""
 
-    element="collective.contentrules.telegram.action.TelegramAction"
+    element = "collective.contentrules.telegram.action.TelegramAction"
 
     @property
     def summary(self):
@@ -68,18 +73,18 @@ class TelegramAction(SimpleItem):
 @implementer(IExecutable)
 @adapter(Interface, ITelegramAction, Interface)
 class TelegramActionExecutor:
-    """ The executor of the action"""
+    """The executor of the action"""
 
     def __init__(self, context, element, event):
         self.context = context
-        self.element= element
+        self.element = element
         self.event = event
 
     def _get_token(self):
-        """ get the Telegram Token
-            we have 2 options:
-                - Either it is set explicitely in this action
-                - It is a global setting
+        """get the Telegram Token
+        we have 2 options:
+            - Either it is set explicitely in this action
+            - It is a global setting
 
         """
         if self.element.token:
@@ -90,7 +95,7 @@ class TelegramActionExecutor:
         )
 
     def __call__(self):
-        """ execute the action """
+        """execute the action"""
         interpolator = IStringInterpolator(self.event.object)
         recipient = interpolator(self.element.recipient)
         message = interpolator(self.element.message)

@@ -13,7 +13,11 @@
       </tr>
     </thead>
     <tbody>
-      <tal:block tal:define="sublist here/@@stringinterp_info/substitutionList" tal:repeat="category sublist">
+      <tal:block tal:define="
+                   sublist here/@@stringinterp_info/substitutionList;
+                 "
+                 tal:repeat="category sublist"
+      >
         <tr tal:repeat="item python:category['items']">
           <td tal:content="category/category">All Content</td>
           <td>${<span tal:replace="item/id">url</span>}</td>
