@@ -5,7 +5,14 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- set default value for token [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- fix element not having the attribute [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+-  [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- [ci skip] [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
 
 
 1.0 (2024-03-21)
