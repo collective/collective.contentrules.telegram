@@ -43,6 +43,8 @@ Features
 Installation
 ------------
 
+Get a Telegram Bot Token. `Check the official documentation`_ to know how to do it.
+
 Install collective.contentrules.telegram by adding it to your buildout::
 
     [buildout]
@@ -80,3 +82,6 @@ License
 -------
 
 The project is licensed under the GPLv2.
+
+
+.. _`Check the official documentation`: https://core.telegram.org/bots/api
