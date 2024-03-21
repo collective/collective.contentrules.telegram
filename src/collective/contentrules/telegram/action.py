@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.contentrules.telegram import _
 from OFS.SimpleItem import SimpleItem
 from plone.app.contentrules.actions import ActionAddForm
@@ -35,7 +34,7 @@ class ITelegramAction(Interface):
         description=_(
             '',
         ),
-        default=u'',
+        default='',
         required=True,
         readonly=False,
     )

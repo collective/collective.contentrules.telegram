@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.contentrules.telegram import _
 from collective.contentrules.telegram.interfaces import ICollectiveContentrulesTelegramLayer
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
