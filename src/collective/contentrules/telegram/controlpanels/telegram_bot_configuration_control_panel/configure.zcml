@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.contentrules.telegram">
+
+  <browser:page
+    name="telegram_bot_configuration_control_panel-controlpanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".controlpanel.TelegramBotConfigurationControlPanelView"
+    layer="collective.contentrules.telegram.interfaces.ICollectiveContentrulesTelegramLayer"
+    permission="cmf.ManagePortal"
+    />
+
+  <include package="plone.restapi"  />
+  <adapter
+    factory=".controlpanel.TelegramBotConfigurationControlPanelConfigletPanel"
+    name="telegram_bot_configuration_control_panel" />
+
+
+</configure>
