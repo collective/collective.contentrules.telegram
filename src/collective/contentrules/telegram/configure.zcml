@@ -16,6 +16,7 @@
 
   <!-- has to be loaded before permissions are used, so keep above views aso. -->
   <include file="permissions.zcml" />
+  <include file="action.zcml" />
 
   <genericsetup:registerProfile
       name="default"

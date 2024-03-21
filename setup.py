@@ -55,6 +55,9 @@ setup(
         "setuptools",
         # -*- Extra requirements: -*-
         "plone.api>=1.8.4",
+        "plone.app.contentrules",
+        # We need a non-asynchronous version of the library
+        "python-telegram-bot<20",
     ],
     extras_require={
         "test": [
