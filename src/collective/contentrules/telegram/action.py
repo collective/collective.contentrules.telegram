@@ -83,7 +83,7 @@ class TelegramActionExecutor:
     def _get_token(self):
         """get the Telegram Token
         we have 2 options:
-            - Either it is set explicitely in this action
+            - Either it is set explicitly in this action
             - It is a global setting
 
         """
