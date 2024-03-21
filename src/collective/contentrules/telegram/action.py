@@ -87,7 +87,7 @@ class TelegramActionExecutor:
             - It is a global setting
 
         """
-        if self.element.token:
+        if hasattr(self.element, 'token') and self.element.token:
             return self.element.token
 
         return api.portal.get_registry_record(
