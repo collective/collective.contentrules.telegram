@@ -4,3 +4,9 @@
 [meta]
 template = "default"
 commit-id = "09a693f5"
+
+
+[gitignore]
+extra_lines = """
+.python-version
+"""
