@@ -36,28 +36,8 @@ An add-on to enable sending messages to Telegram using content rules
 Features
 --------
 
-- Can be bullet points
+- Content Rule action to send messages using Telegram
 
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
 
 
 Installation
@@ -79,15 +59,8 @@ and then running ``bin/buildout``
 Authors
 -------
 
-Provided by awesome people ;)
+Mikel Larreategi <mlarreategi@codesyntax.com>
 
-
-Contributors
-------------
-
-Put your name here, you deserve it!
-
-- ?
 
 
 Contribute
@@ -95,14 +68,12 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.contentrules.telegram/issues
 - Source Code: https://github.com/collective/collective.contentrules.telegram
-- Documentation: https://docs.plone.org/foo/bar
 
 
 Support
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+If you are having issues, please let us know addin an issue in our GitHub repository.
 
 
 License
