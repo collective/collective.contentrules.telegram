@@ -1,4 +1,3 @@
-from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
@@ -44,11 +43,3 @@ COLLECTIVE_CONTENTRULES_TELEGRAM_FUNCTIONAL_TESTING = FunctionalTesting(
 )
 
 
-COLLECTIVE_CONTENTRULES_TELEGRAM_ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(
-        COLLECTIVE_CONTENTRULES_TELEGRAM_FIXTURE,
-        REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        z2.ZSERVER_FIXTURE,
-    ),
-    name="CollectiveContentrulesTelegramLayer:AcceptanceTesting",
-)
