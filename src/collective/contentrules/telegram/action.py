@@ -62,6 +62,7 @@ class TelegramAction(SimpleItem):
 
     message = ""
     recipient = ""
+    token = ""
 
     element = "collective.contentrules.telegram.action.TelegramAction"
 
