@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
@@ -19,13 +18,15 @@ class CollectiveContentrulesTelegramLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.app.dexterity
+
         self.loadZCML(package=plone.app.dexterity)
         import plone.restapi
+
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.contentrules.telegram)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.contentrules.telegram:default')
+        applyProfile(portal, "collective.contentrules.telegram:default")
 
 
 COLLECTIVE_CONTENTRULES_TELEGRAM_FIXTURE = CollectiveContentrulesTelegramLayer()
@@ -33,13 +34,13 @@ COLLECTIVE_CONTENTRULES_TELEGRAM_FIXTURE = CollectiveContentrulesTelegramLayer()
 
 COLLECTIVE_CONTENTRULES_TELEGRAM_INTEGRATION_TESTING = IntegrationTesting(
     bases=(COLLECTIVE_CONTENTRULES_TELEGRAM_FIXTURE,),
-    name='CollectiveContentrulesTelegramLayer:IntegrationTesting',
+    name="CollectiveContentrulesTelegramLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_CONTENTRULES_TELEGRAM_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(COLLECTIVE_CONTENTRULES_TELEGRAM_FIXTURE,),
-    name='CollectiveContentrulesTelegramLayer:FunctionalTesting',
+    name="CollectiveContentrulesTelegramLayer:FunctionalTesting",
 )
 
 
@@ -49,5 +50,5 @@ COLLECTIVE_CONTENTRULES_TELEGRAM_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='CollectiveContentrulesTelegramLayer:AcceptanceTesting',
+    name="CollectiveContentrulesTelegramLayer:AcceptanceTesting",
 )

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <layers>
-  <layer
-      name="collective.contentrules.telegram"
-      interface="collective.contentrules.telegram.interfaces.ICollectiveContentrulesTelegramLayer"
-      />
+  <layer interface="collective.contentrules.telegram.interfaces.ICollectiveContentrulesTelegramLayer"
+         name="collective.contentrules.telegram"
+  />
 </layers>
